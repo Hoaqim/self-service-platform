@@ -6,6 +6,6 @@ COPY . .
 RUN CGO_ENABLED=0 GOOS=Linux go build -o main .
 
 FROM gcr.io/distroless/static-debian12
-COPY --fro=BUILDER /app/main /main
+COPY --from=BUILDER /app/main /main
 EXPOSE 8080
-CMD["/main"]
+CMD ["/main"]
