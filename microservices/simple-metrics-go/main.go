@@ -25,7 +25,7 @@ func main() {
 		fmt.Fprint(w, "Welcome in this simple go app")
 	})
 
-	http.Handle("/metrics", promhttp.Handle())
+	http.Handle("/metrics", promhttp.Handler())
 
 	http.ListenAndServe(":8080", nil)
 }
