@@ -25,4 +25,4 @@ jobs:
         with:
           context: ./microservices/simple-metrics-go
           push: true
-          tags: ghcr.io/${{ github.repository }}/simple-metrics-go:latest
+          tags: ghcr.io/hoaqim/self-service-platform/simple-metrics-go:latest
