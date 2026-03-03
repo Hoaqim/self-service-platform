@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Hoaqim/self-service-platform
+    repoURL: https://github.com/hoaqim/self-service-platform
     path: manifests/simple-metrics-go
     targetRevision: main
   destination:

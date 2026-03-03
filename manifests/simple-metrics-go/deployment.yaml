@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: metrics-app
-        image: ghcr.io/Hoaqim/simple-metrics-go:latest
+        image: ghcr.io/hoaqim/self-service-platform/simple-metrics-go:latest
         ports: 
         - containerPort: 8080
