@@ -1,0 +1,7 @@
+controller:
+  service:
+    type: NodePort
+  hostPort:
+    enabled: true
+  nodeSelector:
+    ingress-ready: "true"
