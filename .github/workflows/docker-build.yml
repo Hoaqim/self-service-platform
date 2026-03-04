@@ -20,7 +20,24 @@ jobs:
           username: ${{github.actor}}
           password: ${{secrets.GITHUB_TOKEN}}
 
-      - name: Build and Push Image
+      - name: Build Image for tests
+        uses: docker/build-push-action@v5
+        with:
+          context: ./microservices/simple-metrics-go
+          load: true
+          tags: ghcr.io/hoaqim/self-service-platform/simple-metrics-go:test
+      
+      - name: Run Trivy locally
+        uses: aquasecurity/trivy-action@0.34.2
+        with:
+          image-ref: 'ghcr.io/hoaqim/self-service-platform/simple-metrics-go:test'
+          format: table
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
+
+      - name: Push Image
         uses: docker/build-push-action@v5
         with:
           context: ./microservices/simple-metrics-go
