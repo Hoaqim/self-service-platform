@@ -43,3 +43,5 @@ jobs:
           context: ./microservices/simple-metrics-go
           push: true
           tags: ghcr.io/hoaqim/self-service-platform/simple-metrics-go:latest
+        env:
+          TRIVY_DB_REPOSITORY: "public.ecr.aws/aquasecurity/trivy-db"
